@@ -124,6 +124,7 @@
     </target>
 
     <!-- Create the javadoc for the source -->
+    <target name="doc" depends="javadoc" />
     <target name="javadoc">
         <javadoc sourcepath="${src.dir}" destdir="${javadoc.dir}"/>
     </target>
@@ -155,13 +156,38 @@
 
     <target name="dist" depends="distribute"/>
 
-    <target name="distribute" depends="jar">
+    <target name="distribute" depends="sign">
         <!--<mkdir dir="${dist.dir}"/>-->
         <copy todir="${dist.dir}">
             <fileset dir="${jar.dir}"/>
         </copy>
         <chmod file="${dist.jar.file}" perm="u+x"/>
     </target>
+
+    <!-- Sign the jar -->
+    <!-- TODO everything from here on has hardcoded values 
+    Variables need to be added!
+    -->
+    <target name="sign" depends="jar">
+        <mkdir dir="signed"/>
+        <signjar destDir="signed"
+                 alias="FlashFlashRevolutionBot"
+                 keystore="compstore"
+                 keypass="kpi135"
+                 storepass="ab987c">
+            <path>
+                <fileset dir="${jar.dir}" includes="**/*.jar"/>
+            </path>
+            <flattenmapper/>
+        </signjar>
+    </target>
+
+    <target name="jnlp" depends="sign" >
+        <copy todir="jnlp/" >
+            <fileset dir="${jar.dir}" />
+        </copy>
+    </target>
+
 
 </project>
 
