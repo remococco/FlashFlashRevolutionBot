@@ -11,6 +11,7 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.Robot;
 
+@Ignore
 public class ScreenCaptureCapabilitiesTest {
 
     private Robot robot;
@@ -62,7 +63,8 @@ public class ScreenCaptureCapabilitiesTest {
         }
     }
 
-    @Test(timeout=15)
+    @Test
+    @Ignore
     public void getAllScreenCoordsTest() {
         Color color;
         System.out.printf("Testing all coordinates in height: (0, %d) width: (0. %d)\n", SCREEN_HEIGHT, SCREEN_WIDTH);

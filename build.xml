@@ -147,7 +147,10 @@
             <classpath refid="test.classpath.ref"/>
             <formatter type="plain" usefile="false"/>
             <batchtest>
-                <fileset dir="${test.class.dir}"/>
+                <fileset dir="${test.class.dir}">
+                    <!-- Ignore all anonymous classes -->
+                    <exclude name="**/*$*"/>
+                </fileset>
             </batchtest>
         </junit>
     </target>
@@ -166,7 +169,7 @@
 
     <!-- Sign the jar -->
     <!-- TODO everything from here on has hardcoded values 
-    Variables need to be added!
+    Variables need to be added! I got lazy : (
     -->
     <target name="sign" depends="jar">
         <mkdir dir="signed"/>
@@ -182,12 +185,32 @@
         </signjar>
     </target>
 
-    <target name="jnlp" depends="sign" >
+    <target name="check-jnlp-consistency" >
+        <condition property="jnlp-jar-exists" >
+            <and>
+                <available type="file" file="jnlp/${jar.name}" />
+                <available type="dir"  file="jnlp/lib/" />
+            </and>
+        </condition>
+    </target>
+
+    <target name="jnlp-clean" depends="check-jnlp-consistency" if="jnlp-jar-exists" >
+        <chmod perm="u+rwx">
+            <fileset file="jnlp/${jar.name}" />
+        </chmod>
+        <chmod perm="u+rwx">
+            <fileset dir="jnlp/lib/" />
+        </chmod>
+
+        <delete file="jnlp/${jar.name}" />
+        <delete dir="jnlp/lib/" />
+    </target>
+
+    <target name="jnlp" depends="sign, jnlp-clean" >
         <copy todir="jnlp/" >
             <fileset dir="${jar.dir}" />
         </copy>
     </target>
-
 
 </project>
 
