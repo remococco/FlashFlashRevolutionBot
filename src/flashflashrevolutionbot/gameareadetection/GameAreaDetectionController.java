@@ -32,7 +32,7 @@ public class GameAreaDetectionController extends MouseAdapter implements Runnabl
     private final Thread controlThread;
 
     /** Keep track of when the thread is running */
-    private boolean isRunning;
+    private volatile boolean isRunning;
 
     /** List of {@link GameAreaDetectionListeners} that are interested in infromation obtained by this class */
     private final List<GameAreaDetectionListener> gameAreaDetectionListeners;

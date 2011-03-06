@@ -1,4 +1,4 @@
-package FlashFlashRevolutionBot.gui;
+package flashflashrevolutionbot.gui;
 
 import flashflashrevolutionbot.gameareadetection.GameAreaDetectionController;
 import flashflashrevolutionbot.gameareadetection.GameAreaDetectionListener;
@@ -12,6 +12,8 @@ import javax.swing.JButton;
 
 public class GameAreaDetectionButton extends JButton 
     implements ActionListener, GameAreaDetectionListener {
+
+    private static final long serialVersionUID = 3766850257224727834L;
 
     /** The Text for the button */
     private final static String BUTTON_TEXT = "Set Game Area";

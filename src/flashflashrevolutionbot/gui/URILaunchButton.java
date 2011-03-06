@@ -46,7 +46,7 @@ public class URILaunchButton extends JButton
      *
      * @throws URISyntaxException If the given string violates RFC 2396, as augmented by the above deviations
      *
-     * @see #URI(String, URI)
+     * @see #URILaunchButton(String, URI)
      */
     public URILaunchButton(String text, String destination) throws URISyntaxException {
         this(text, new URI(destination));
@@ -60,7 +60,7 @@ public class URILaunchButton extends JButton
      *
      * @throws URISyntaxException If the given string violates RFC 2396, as augmented by the above deviations
      *
-     * @see #URI(String, URI)
+     * @see #URILaunchButton(String, URI)
      */
     public URILaunchButton(URI destination) throws URISyntaxException {
         this("Launch " + destination, destination);
@@ -75,7 +75,7 @@ public class URILaunchButton extends JButton
      *
      * @throws URISyntaxException If the given string violates RFC 2396, as augmented by the above deviations
      *
-     * @see #URI(String, URI)
+     * @see #URILaunchButton(String, URI)
      */
     public URILaunchButton(String destination) throws URISyntaxException {
         this(new URI(destination));

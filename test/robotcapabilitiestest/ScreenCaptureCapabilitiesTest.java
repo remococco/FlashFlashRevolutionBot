@@ -1,4 +1,4 @@
-package robotcapabilitiestest;
+package flashflashrevolutionbotests.robotcapabilitiestest;
 
 /* JUnit test imports */
 import org.junit.*;

@@ -1,4 +1,4 @@
-package robotcapabilitiestest;
+package flashflashrevolutionbotests.robotcapabilitiestest;
 
 import com.sun.awt.AWTUtilities;
 
