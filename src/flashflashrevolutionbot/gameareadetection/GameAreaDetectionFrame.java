@@ -1,4 +1,4 @@
-package flashflashrevolutionbot;
+package flashflashrevolutionbot.gameareadetection;
 
 import java.awt.AWTEvent;
 import java.awt.GraphicsConfiguration;
@@ -15,7 +15,7 @@ import com.sun.awt.AWTUtilities;
  *
  * @version 2011.03.05
  */
-public class GameAreaDetectionFrame extends javax.swing.JFrame implements javax.swing.RootPaneContainer {
+class GameAreaDetectionFrame extends javax.swing.JFrame implements javax.swing.RootPaneContainer {
 
     private static final long serialVersionUID = 4509847006666348735L;
 

@@ -26,6 +26,7 @@ import static org.junit.Assert.*;
  * @author Remo Cocco
  * @version 2011.01.29
  */
+@Ignore
 public class TranslucentJFrameTest {
 
     private volatile boolean frameIsOpen = true;

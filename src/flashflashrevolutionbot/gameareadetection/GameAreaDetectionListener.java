@@ -1,4 +1,4 @@
-package flashflashrevolutionbot;
+package flashflashrevolutionbot.gameareadetection;
 
 import java.awt.Rectangle;
 

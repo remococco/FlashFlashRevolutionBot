@@ -1,4 +1,4 @@
-package flashflashrevolutionbot;
+package flashflashrevolutionbot.gameareadetection;
 
 import java.awt.event.AWTEventListener;
 
@@ -60,7 +60,7 @@ public class GameAreaDetectionController extends MouseAdapter implements Runnabl
      }
 
     /**
-     * Register the {@link GameAreaDetectionListeners}
+     * Register the {@link GameAreaDetectionListener}s
      *
      * @param gameAreaDetectionListeners The GameAreaDetectionListeners that are interested in the information retreived by this.
      */
@@ -74,6 +74,7 @@ public class GameAreaDetectionController extends MouseAdapter implements Runnabl
      * Run loop which will continue to appropritly re-draw the {@link GameAreaDetectionController}
      * and get the area of the game when it is over.
      */
+    @Override
     public void run() {
         Point currentMouseLocation;
         Rectangle currentFrameLocation;

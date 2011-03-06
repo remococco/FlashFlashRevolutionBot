@@ -1,5 +1,8 @@
 package flashflashrevolutionbot;
 
+import flashflashrevolutionbot.gameareadetection.GameAreaDetectionController;
+import flashflashrevolutionbot.gameareadetection.GameAreaDetectionLogger;
+
 import java.awt.Dimension;
 import java.awt.Graphics;
 
