@@ -143,7 +143,7 @@
 
     <!-- Run all of the JUnit test in the test directory -->
     <target name="test" depends="compile-tests">
-        <junit fork="yes" haltonfailure="yes">
+        <junit fork="no" haltonerror="no" haltonfailure="no">
             <classpath refid="test.classpath.ref"/>
             <formatter type="plain" usefile="false"/>
             <batchtest>

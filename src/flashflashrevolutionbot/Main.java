@@ -8,6 +8,10 @@ import javax.swing.JFrame;
 
 /**
  * Main class for Flash Flash Revolution Robot
+ *
+ * @author Remo Cocco
+ *
+ * @version 2011.03.05
  */
 public class Main {
 
@@ -21,16 +25,7 @@ public class Main {
      * This will set up the application and run it
      */
     public static void main (String... args) {
-        //System.out.println("Hello Flash Flash!");
-        initSteveoJFrame();
-    }
-
-    public static void initSteveoJFrame() {
-        JFrame frame = new JFrame("Hello, Stev-o!");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setPreferredSize(new Dimension(640, 480));
-        frame.pack();
-        frame.setVisible(true);
+        new GameAreaDetectionController(new GameAreaDetectionLogger());
     }
 }
 
