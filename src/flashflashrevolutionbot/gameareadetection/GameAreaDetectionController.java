@@ -26,16 +26,16 @@ import java.util.List;
 public class GameAreaDetectionController extends MouseAdapter implements Runnable {
 
     /** The {@link GameAreaDetectionController} used to detect the game area */
-    private GameAreaDetectionFrame gameAreaDetectionFrame;
+    private final GameAreaDetectionFrame gameAreaDetectionFrame;
 
     /** The {@link Thread} that will control the frame and retreives the game area */
-    private Thread controlThread;
+    private final Thread controlThread;
 
     /** Keep track of when the thread is running */
     private boolean isRunning;
 
     /** List of {@link GameAreaDetectionListeners} that are interested in infromation obtained by this class */
-    private List<GameAreaDetectionListener> gameAreaDetectionListeners;
+    private final List<GameAreaDetectionListener> gameAreaDetectionListeners;
 
     /**
      * Create a new GameAreaDetectionController 

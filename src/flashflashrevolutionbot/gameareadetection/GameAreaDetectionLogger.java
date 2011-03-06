@@ -7,7 +7,7 @@ import java.io.PrintStream;
 public class GameAreaDetectionLogger implements GameAreaDetectionListener {
 
     /** {@link PrintStream} to print to */
-    private PrintStream printStream;
+    private final PrintStream printStream;
 
     /**
      * Create a GameAreaDetectionLogger that will print to the given print screen
@@ -32,7 +32,7 @@ public class GameAreaDetectionLogger implements GameAreaDetectionListener {
      */
     @Override
     public void didFinishRetreivingGameArea(Rectangle gameArea) {
-        System.out.println("Detected game area: " + gameArea);
+        this.printStream.println("Detected game area: " + gameArea);
     }
 }
 
